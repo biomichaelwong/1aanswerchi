@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta name="mobile-web-app-capable" content="yes">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DSE 生物科 · 卷一A 答案搜尋器</title>
+<meta name="description" content="所有答案，所有原因——正確答案、答對率、核心概念及逐個選項詳盡解釋，助你備戰 HKDSE 生物科卷一A。">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Bio 1A">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#f7f8fa" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ═══════════ Nav ═══════════ -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <svg class="mark" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 2.8c3.9 3 5.9 5.9 5.9 8.9a5.9 5.9 0 1 1-11.8 0c0-3 2-5.9 5.9-8.9Z"/>
+      <path d="M12 21.2c0-5 1.6-8.5 4.4-11.2"/>
+    </svg>
+    <p class="nav-title"><strong>DSE 生物科</strong> <span>· 卷一A 答案搜尋器</span></p>
+  </div>
+</header>
+
+<main>
+
+  <!-- ═══════════ Hero ═══════════ -->
+  <section class="hero">
+    <h1>
+      <span class="line reveal">每個答案。</span>
+      <span class="line grad reveal d1">每個原因。</span>
+    </h1>
+    <p class="lede reveal d2">選擇年份，選擇題目。就是這麼簡單。</p>
+  </section>
+
+  <!-- ═══════════ Picker ═══════════ -->
+  <section class="section">
+    <div class="card picker reveal d3">
+
+      <div class="fields">
+        <div class="field">
+          <label for="year">年份</label>
+          <div class="sel"><select id="year" aria-label="考試年份"></select></div>
+        </div>
+        <div class="field">
+          <label for="qno">題目</label>
+          <div class="sel"><select id="qno" aria-label="題目編號"></select></div>
+        </div>
+      </div>
+
+      <div class="nav-row">
+        <button class="pill" id="prevBtn" type="button">‹&nbsp;上一題</button>
+        <p class="counter" id="counter"></p>
+        <button class="pill" id="nextBtn" type="button">下一題&nbsp;›</button>
+      </div>
+
+      <p class="warn" id="warn" hidden>無法載入題庫。請確保 <code>data.js</code> 與此頁面位於同一資料夾。</p>
+    </div>
+  </section>
+
+  <!-- ═══════════ Result ═══════════ -->
+  <section class="section" id="result" aria-live="polite" hidden>
+
+    <article class="card pop">
+      <p class="kicker" id="qLabel">—</p>
+      <div class="answer-grid">
+        <div class="tile" id="tile"><span id="ansLetter">–</span></div>
+
+        <div class="gauge">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <circle class="g-track" cx="60" cy="60" r="52"/>
+            <circle class="g-fill"  cx="60" cy="60" r="52" id="gFill"/>
+          </svg>
+          <div class="gauge-text"><b id="pctText">—</b><small>答對</small></div>
+        </div>
+
+        <div class="verdict">
+          <p class="kicker">考生表現</p>
+          <p class="badge" id="diffPill">—</p>
+          <p class="verdict-note" id="diffNote"></p>
+        </div>
+      </div>
+    </article>
+
+    <article class="card pop d1">
+      <p class="kicker">測試核心概念</p>
+      <p class="concept" id="concept"></p>
+    </article>
+
+    <article class="card pop d2 acc" id="acc">
+      <button class="acc-btn" id="accBtn" aria-expanded="false" aria-controls="accPanel">
+        <span>
+          <span class="acc-t1">每個選項對錯解析</span>
+          <span class="acc-t2" id="accHint">點擊展開四個選項的詳細解釋</span>
+        </span>
+        <span class="plus" aria-hidden="true"><i></i><i></i></span>
+      </button>
+      <div class="acc-panel" id="accPanel"><div><div class="opts" id="opts"></div></div></div>
+    </article>
+
+    <button class="share" id="shareBtn" type="button">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4"/><path d="M8 8l4-4 4 4"/><path d="M5 14v5h14v-5"/></svg>
+      <span>分享此題目</span>
+    </button>
+
+  </section>
+
+  <!-- ═══════════ Footer ═══════════ -->
+  <footer class="foot">
+    <p>HKDSE 生物科卷一A 溫習工具 · 解釋內容僅供溫習參考。</p>
+    <p>本網站由 <strong>黃曉霖老師 (Michael)</strong> 設計。</p>
+  </footer>
+
+</main>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
