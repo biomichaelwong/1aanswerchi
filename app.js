@@ -117,9 +117,9 @@
     // keep bottom buttons in sync
     prevBtn2.disabled = (i <= 0);
     nextBtn2.disabled = (i === qList.length - 1);
-    counter2.textContent = counter.textContent;   // reuse same text
     counter.textContent = '第 ' + n + ' 題（共 ' + qList[qList.length - 1] + ' 題）';
-
+    counter2.textContent = counter.textContent;   // reuse same text
+     
     localStorage.setItem('bio1a', y + '|' + n);
     history.replaceState(null, '', '#' + y + '-' + n);
 
