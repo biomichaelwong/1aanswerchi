@@ -157,7 +157,9 @@
   }
   prevBtn.addEventListener('click', function () { step(-1); });
   nextBtn.addEventListener('click', function () { step(1); });
-
+  prevBtn2.addEventListener('click', function () { step(-1); });   // ← add
+  nextBtn2.addEventListener('click', function () { step(1); });    // ← add
+   
   /* ---------- selects (no Enter needed) ---------- */
   yearSel.addEventListener('change', function () {
     fillQuestions(yearSel.value, null);
