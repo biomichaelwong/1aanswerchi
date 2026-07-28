@@ -124,6 +124,7 @@ select:hover{border-color:rgba(0,0,0,.18)}
 select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3.5px rgba(0,113,227,.2)}
 
 .nav-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:22px}
+.bottom-nav{margin-bottom:16px}
 .pill{
   padding:10px 19px;border-radius:99px;border:1px solid var(--hair);
   font-size:14.5px;font-weight:600;letter-spacing:-.01em;color:var(--blue);
