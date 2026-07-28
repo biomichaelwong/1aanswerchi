@@ -8,7 +8,7 @@
   var yearSel = $('year'), qSel = $('qno'),
       prevBtn = $('prevBtn'), nextBtn = $('nextBtn'),
       prevBtn2 = $('prevBtn2'), nextBtn2 = $('nextBtn2'),
-      counter = $('counter'), warn = $('warn'),
+      counter = $('counter'), counter2 = $('counter2'), warn = $('warn'),
       result  = $('result'), qLabel = $('qLabel'),
       tile    = $('tile'),   ansLetter = $('ansLetter'),
       gFill   = $('gFill'),  pctText = $('pctText'),
@@ -117,8 +117,8 @@
     // keep bottom buttons in sync
     prevBtn2.disabled = (i <= 0);
     nextBtn2.disabled = (i === qList.length - 1);
-    counter.textContent = '第 ' + n + ' 題（共 ' + qList[qList.length - 1] + ' 題）';
-    counter2.textContent = counter.textContent;   // reuse same text
+    counter.textContent = 'Question ' + n + ' of ' + qList[qList.length - 1];
+    counter2.textContent = counter.textContent;   // copies the NEW value ✓
      
     localStorage.setItem('bio1a', y + '|' + n);
     history.replaceState(null, '', '#' + y + '-' + n);
